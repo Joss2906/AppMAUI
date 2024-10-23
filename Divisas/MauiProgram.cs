@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Divisas.DataAccess;
 
 namespace Divisas
 {
@@ -14,6 +15,10 @@ namespace Divisas
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+
+            var dbContext = new CurrencyDbContext();
+            dbContext.Database.EnsureCreated();
+            dbContext.Dispose();
 
 #if DEBUG
     		builder.Logging.AddDebug();

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zje9cjErF1g=",
+  "dgSpecHash": "2JcTjNSgs5Q=",
   "success": true,
   "projectFilePath": "C:\\Users\\Evidence\\Documents\\Jocelyn Moreno\\ProyectoMAUI\\Divisas\\Divisas.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Evidence\\.nuget\\packages\\communitytoolkit.mvvm\\8.3.2\\communitytoolkit.mvvm.8.3.2.nupkg.sha512",
     "C:\\Users\\Evidence\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\Evidence\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.10\\microsoft.data.sqlite.core.8.0.10.nupkg.sha512",
     "C:\\Users\\Evidence\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.10\\microsoft.entityframeworkcore.8.0.10.nupkg.sha512",
