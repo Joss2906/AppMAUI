@@ -30,6 +30,11 @@ namespace Divisas
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<CurrencyListViewModel>();
 
+            builder.Services.AddTransient<CurrencyList>();
+            builder.Services.AddTransient<Splash>();
+            builder.Services.AddTransient<PageSelector>();
+            builder.Services.AddTransient<Conversion>();
+
             Routing.RegisterRoute(nameof(CurrencyForm), typeof(CurrencyForm));
 
 

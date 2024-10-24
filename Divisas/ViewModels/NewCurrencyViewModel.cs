@@ -30,11 +30,10 @@ namespace Divisas.ViewModels
         [ObservableProperty]
         private bool loadingIsVisible = false;
 
-        public NewCurrencyViewModel(CurrencyDbContext context)
-        {
-            _dbContext = context;
-            //CurrencyDTO.FechaContrato = DateTime.Now;
-        }
+        //public NewCurrencyViewModel(CurrencyDbContext context)
+        //{
+        //    _dbContext = context;
+        //}
 
 
         public async void ApplyQueryAttributes(IDictionary<string, object> query)
@@ -48,7 +47,7 @@ namespace Divisas.ViewModels
             }
             else
             {
-                PageTitle = "Editar Empleado";
+                PageTitle = "Editar Divisa";
                 LoadingIsVisible = true;
                 await Task.Run(async () =>
                 {

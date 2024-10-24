@@ -3,9 +3,11 @@ using Divisas.ViewModels;
 
 public partial class CurrencyForm : ContentPage
 {
-	public CurrencyForm(NewCurrencyViewModel viewModel)
+	//public CurrencyForm(NewCurrencyViewModel viewModel)
+	public CurrencyForm()
 	{
-		InitializeComponent();
-        BindingContext = viewModel;
-    }
+        BindingContext = new NewCurrencyViewModel();
+        InitializeComponent();
+		
+	}
 }

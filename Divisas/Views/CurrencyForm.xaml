@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Divisas.Views.CurrencyForm"
+             xmlns:vm="clr-namespace:Divisas.ViewModels"
+             x:DataType="vm:NewCurrencyViewModel"
              Title="{Binding PageTitle}">
     <VerticalStackLayout Padding="15">
         
@@ -18,11 +20,11 @@
         <Label Text="Nombre"/>
         <Entry Text="{Binding CurrencyDto.Name}" Margin="0,0,0,10"/>
 
-        <Label Text="Sueldo"/>
+        <Label Text="Tipo de Cambio"/>
         <Entry Text="{Binding CurrencyDto.ExchangeRate}" Keyboard="Numeric" Margin="0,0,0,10"/>
 
         <Label Text="Fecha Contrato"/>
-        <DatePicker Date="{Binding EmpleadoDto.FechaContrato}" Margin="0,0,0,10"/>
+        <DatePicker Date="{Binding CurrencyDto.Image}" Margin="0,0,0,10"/>
 
         <Button Text="Guardar" Command="{Binding GuardarCommand}" BackgroundColor="Green"/>
 

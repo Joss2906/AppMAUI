@@ -18,17 +18,17 @@ namespace Divisas.ViewModels
         [ObservableProperty]
         private ObservableCollection<CurrencyDTO> currencyList = new ObservableCollection<CurrencyDTO>();
 
-        public CurrencyListViewModel(CurrencyDbContext context)
-        {
-            _dbContext = context;
+        //public CurrencyListViewModel(CurrencyDbContext context)
+        //{
+        //    _dbContext = context;
 
-            MainThread.BeginInvokeOnMainThread(new Action(async () => await Get()));
+        //    MainThread.BeginInvokeOnMainThread(new Action(async () => await Get()));
 
-            WeakReferenceMessenger.Default.Register<CurrencyDeliveryMsg>(this, (r, m) =>
-            {
-                MessageReceived(m.Value);
-            });
-        }
+        //    WeakReferenceMessenger.Default.Register<CurrencyDeliveryMsg>(this, (r, m) =>
+        //    {
+        //        MessageReceived(m.Value);
+        //    });
+        //}
 
         public async Task Get()
         {
@@ -71,8 +71,10 @@ namespace Divisas.ViewModels
         [RelayCommand]
         private async Task Create()
         {
-            var uri = $"{nameof(CurrencyForm)}?id=0";
+            var uri = $"{nameof(CurrencyList)}?id=0";
             await Shell.Current.GoToAsync(uri);
+
+            //await Shell.Current.Navigation.PushAsync(new CurrencyForm(), false);
         }
 
         [RelayCommand]

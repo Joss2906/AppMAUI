@@ -7,9 +7,32 @@
     Shell.FlyoutBehavior="Disabled"
     Title="Divisas">
 
-    <ShellContent
+    <!--<ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage" />-->
+
+    <TabBar>
+        <!-- Primera pestaña -->
+        <Tab Title="Divisas"
+             Icon="bolsa-de-dinero.png">
+            <!-- Puedes usar un ícono -->
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+
+        <!-- Segunda pestaña -->
+        <Tab Title="Perfil"
+             Icon="avatar-femenino.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+
+        <!-- Tercera pestaña -->
+        <Tab Title="Convertir"
+             Icon="convertir.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+    </TabBar>
+
+
 
 </Shell>

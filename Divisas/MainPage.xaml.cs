@@ -1,27 +1,38 @@
 ﻿using Divisas.ViewModels;
+using Divisas.Views;
 namespace Divisas
 {
     public partial class MainPage : ContentPage
     {
         int count = 0;
 
-        public MainPage(CurrencyListViewModel viewModel)
+        //public MainPage(CurrencyListViewModel viewModel)
+        //{
+        //    InitializeComponent();
+        //    BindingContext = viewModel;
+        //}
+
+        public MainPage()
         {
             InitializeComponent();
-            BindingContext = viewModel;
         }
 
-        //private void OnCounterClicked(object sender, EventArgs e)
-        //{
-        //    count++;
+        private void OnCounterClicked(object sender, EventArgs e)
+        {
+            count++;
 
-        //    if (count == 1)
-        //        CounterBtn.Text = $"Clicked {count} time";
-        //    else
-        //        CounterBtn.Text = $"Clicked {count} times";
+            if (count == 1)
+                CounterBtn.Text = $"Clicked {count} time";
+            else
+                CounterBtn.Text = $"Clicked {count} times";
 
-        //    SemanticScreenReader.Announce(CounterBtn.Text);
-        //}
+            SemanticScreenReader.Announce(CounterBtn.Text);
+        }
+
+        private async void OnButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CurrencyForm());
+        }
     }
 
 }
