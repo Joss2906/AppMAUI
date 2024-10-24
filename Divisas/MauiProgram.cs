@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Divisas.DataAccess;
+using Divisas.Views;
+using Divisas.ViewModels;
 
 namespace Divisas
 {
@@ -20,8 +22,19 @@ namespace Divisas
             dbContext.Database.EnsureCreated();
             dbContext.Dispose();
 
+            builder.Services.AddDbContext<CurrencyDbContext>();
+
+            builder.Services.AddTransient<CurrencyForm>();
+            builder.Services.AddTransient<NewCurrencyViewModel>();
+
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<CurrencyListViewModel>();
+
+            Routing.RegisterRoute(nameof(CurrencyForm), typeof(CurrencyForm));
+
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

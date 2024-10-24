@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Divisas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+b17993d6deec918553959b15519967a025300527")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e55fd075ad312e0ecf6d462614dcbc566cc49b54")]
 [assembly: System.Reflection.AssemblyProductAttribute("Divisas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Divisas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
