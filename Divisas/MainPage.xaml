@@ -29,7 +29,7 @@
                 x:Name="CounterBtn"
                 Text="Get Started" 
                 SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnButtonClicked"
+                Clicked="OnCounterClicked"
                 CommandParameter="{Binding}"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>

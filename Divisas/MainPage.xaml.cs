@@ -29,10 +29,10 @@ namespace Divisas
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
 
-        private async void OnButtonClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CurrencyForm());
-        }
+        //private async void OnButtonClicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new CurrencyForm());
+        //}
     }
 
 }

@@ -17,22 +17,27 @@ namespace Divisas.ViewModels
 {
     public partial class NewCurrencyViewModel : ObservableObject, IQueryAttributable
     {
-        private readonly CurrencyDbContext _dbContext;
+        private readonly CurrencyDbContext? _dbContext;
 
         [ObservableProperty]
         private CurrencyDTO currencyDto = new CurrencyDTO();
 
         [ObservableProperty]
-        private string pageTitle;
+        private string? pageTitle;
 
-        private int currencyId;
+        private int? currencyId;
 
         [ObservableProperty]
         private bool loadingIsVisible = false;
 
-        //public NewCurrencyViewModel(CurrencyDbContext context)
+        public NewCurrencyViewModel(CurrencyDbContext context)
+        {
+            _dbContext = context;
+        }
+
+        //public NewCurrencyViewModel()
         //{
-        //    _dbContext = context;
+        //    _dbContext = new CurrencyDbContext();
         //}
 
 
@@ -66,7 +71,7 @@ namespace Divisas.ViewModels
         }
 
         [RelayCommand]
-        private async Task Guardar()
+        private async Task Save()
         {
             LoadingIsVisible = true;
             CurrencyMessage message = new CurrencyMessage();
@@ -114,6 +119,7 @@ namespace Divisas.ViewModels
                 {
                     LoadingIsVisible = false;
                     WeakReferenceMessenger.Default.Send(new CurrencyDeliveryMsg(message));
+                    //await Shell.Current.GoToAsync("//CurrencyList");
                     await Shell.Current.Navigation.PopAsync();
                 });
 

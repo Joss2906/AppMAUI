@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:dto="clr-namespace:Divisas.DTOs"
-             xmlns:model="clr-namespace:Divisas.Models"
-             xmlns:vm="clr-namespace:Divisas.ViewModels"
-             Title="Listado de Divisas"
-             x:DataType="vm:CurrencyListViewModel"
-             x:Class="Divisas.Views.CurrencyList">
+             xmlns:model="clr-namespace:Divisas.DTOs"
+             x:Class="Divisas.Views.CurrencyList"
+             Title="Divisas Disponibles">
 
     <Grid RowDefinitions="Auto,Auto,*" RowSpacing="15" Margin="15">
 
-        <Button Grid.Row="0" Text="Nuevo Divisa" Command="{Binding CreateCommand}"/>
-        <Label Grid.Row="1" Text="Lista de Divisas" FontSize="Subtitle"/>
+        <Button Grid.Row="0" Text="Nueva Divisa" Command="{Binding CreateCommand}"/>
+        <!--<Label Grid.Row="1" Text="Lista de Divisas" FontSize="Subtitle"/>-->
 
-        <!--<ScrollView Grid.Row="2">
+        <ScrollView Grid.Row="2">
 
-            <CollectionView ItemsSource="{Binding ListaEmpleado}">
+            <CollectionView ItemsSource="{Binding CurrencyList}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="5" Orientation="Vertical"/>
                 </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:EmpleadoDTO">
+                    <DataTemplate x:DataType="model:CurrencyDTO">
                         <Border Padding="10,5" HorizontalOptions="FillAndExpand">
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="5"/>
@@ -34,22 +31,17 @@
                                 <Label Grid.Row="0" Grid.Column="0"
                                        Text="Nombre Completo:" FontAttributes="Bold"/>
                                 <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="End"
-                                    Text="{Binding NombreCompleto}" />
+                                    Text="{Binding Name}" />
 
                                 <Label Grid.Row="1" Grid.Column="0"
-                                    Text="Correo:" FontAttributes="Bold"/>
+                                    Text="Tipo de Cambio:" FontAttributes="Bold"/>
                                 <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="End"
-                                    Text="{Binding Correo}" />
+                                    Text="{Binding ExchangeRate}" />
 
                                 <Label Grid.Row="2" Grid.Column="0"
-                                    Text="Sueldo:" FontAttributes="Bold"/>
+                                    Text="Imagen:" FontAttributes="Bold"/>
                                 <Label Grid.Row="2" Grid.Column="1" HorizontalOptions="End"
-                                    Text="{Binding Sueldo, StringFormat='{0:C}'}" />
-
-                                <Label Grid.Row="3" Grid.Column="0"
-                                    Text="Fecha Contrato:" FontAttributes="Bold"/>
-                                <Label Grid.Row="3" Grid.Column="1" HorizontalOptions="End"
-                                    Text="{Binding FechaContrato, StringFormat='{0:dd/MM/yyyy}'}" />
+                                    Text="{Binding Image}" />
 
                                 <Label Grid.Row="4" Grid.Column="0" Padding="0,15,10,5"
                                        Text="Editar" TextColor="Blue"
@@ -88,7 +80,7 @@
             </CollectionView>
 
 
-        </ScrollView>-->
+        </ScrollView>
 
     </Grid>
 

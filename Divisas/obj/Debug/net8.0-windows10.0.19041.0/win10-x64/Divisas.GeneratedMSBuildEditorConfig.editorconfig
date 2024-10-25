@@ -74,6 +74,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Divisas.Views.PageSelector
 build_metadata.AdditionalFiles.TargetPath = Views\PageSelector.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\PageSelector.xaml
 
+[C:/Users/Evidence/Documents/Jocelyn Moreno/ProyectoMAUI/Divisas/Views/Settings.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Divisas.Views.Settings.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Settings.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Settings.xaml
+
 [C:/Users/Evidence/Documents/Jocelyn Moreno/ProyectoMAUI/Divisas/Views/Splash.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Divisas.Views.Splash.xaml

@@ -11,9 +11,10 @@ public partial class Splash : ContentPage
     private async void OnGetStartedClicked(object sender, EventArgs e)
     {
         // Navegar a la página principal
-        var navigationPage = new NavigationPage(new PageSelector());
-        await Navigation.PushAsync(navigationPage);
-        Navigation.RemovePage(this);
+        //var navigationPage = new NavigationPage(new PageSelector());
+        //await Navigation.PushAsync(navigationPage);
+        //Navigation.RemovePage(this);
+        await Shell.Current.GoToAsync("//CurrencyList");
 
     }
 }

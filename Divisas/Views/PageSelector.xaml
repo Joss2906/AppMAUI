@@ -19,10 +19,10 @@
             <ShellContent ContentTemplate="{DataTemplate local:Views.Conversion}" />
         </Tab>
 
-        <!-- Tercera pestaña --><!--
-        <Tab Title="Cuenta"
+         <!--Tercera pestaña--> 
+        <Tab Title="Configuracion"
              Icon="avatar_femenino.png">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
-        </Tab>-->
+            <ShellContent ContentTemplate="{DataTemplate local:Views.Settings}" />
+        </Tab>
     </TabBar>
 </Shell>
