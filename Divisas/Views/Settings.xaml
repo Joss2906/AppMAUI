@@ -2,11 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Divisas.Views.Settings"
-             Title="Settings">
-    <VerticalStackLayout>
-        <Label 
-            Text="Settings!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Configuración">
+
+    <ScrollView>
+        <StackLayout
+            VerticalOptions="CenterAndExpand"
+            Margin="15"
+            Padding="15">
+
+            <Image Source="avatar_femenino.png" 
+               HorizontalOptions="Center"/>
+
+            <ActivityIndicator 
+                IsVisible="{Binding Loading}"
+                IsRunning="{Binding Loading}"
+                Color="Blue"
+                HeightRequest="30"/>
+
+            <Label Text="Nombre"/>
+            <Entry Text="{Binding SettingsDto.Name}" Margin="0,0,0,10"/>
+
+            <Label Text="Moneda Base"/>
+            <Entry Text="{Binding SettingsDto.BaseCurrency}" Margin="0,0,0,10"/>
+
+            <Label Text="Direccion"/>
+            <Entry Text="{Binding SettingsDto.Address}" Margin="0,0,0,10"/>
+
+            <Label Text="Teléfono"/>
+            <Entry Text="{Binding SettingsDto.Phone}" Margin="0,0,0,10"/>
+
+            <Button Text="Guardar" Command="{Binding SaveSettingsCommand}" BackgroundColor="Blue"/>
+        </StackLayout>
+    </ScrollView>
+    
+
 </ContentPage>

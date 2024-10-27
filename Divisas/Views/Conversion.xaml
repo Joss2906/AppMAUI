@@ -14,7 +14,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Divisas.Views.Conversion"
-             Title="Currency Converter">
+             Title="Convertidor de Divisas">
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="20">
             
@@ -28,6 +28,7 @@
                         <Image Source="convertir.png" WidthRequest="30" HeightRequest="20" VerticalOptions="Center" />
                         <Picker Title="SGD"
                                 VerticalOptions="Center"
+                                ItemsSource="{Binding CurrencyList}"
                                 Grid.Column="1" />
                         <Entry Text="1000.00" 
                                Keyboard="Numeric" 
@@ -48,6 +49,7 @@
                         <Image Source="convertir.png" WidthRequest="30" HeightRequest="20" VerticalOptions="Center" />
                         <Picker Title="USD"
                                 VerticalOptions="Center"
+                                ItemsSource="{Binding CurrencyList}"
                                 Grid.Column="1" />
                         <Entry Text="736.70" 
                                IsReadOnly="True" 

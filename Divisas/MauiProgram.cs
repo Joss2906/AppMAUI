@@ -2,6 +2,7 @@
 using Divisas.DataAccess;
 using Divisas.Views;
 using Divisas.ViewModels;
+using Divisas.Models;
 
 namespace Divisas
 {
@@ -33,11 +34,15 @@ namespace Divisas
             builder.Services.AddTransient<CurrencyList>();
             builder.Services.AddTransient<Splash>();
             builder.Services.AddTransient<PageSelector>();
+
             builder.Services.AddTransient<Conversion>();
-            builder.Services.AddTransient<Settings>();
+            builder.Services.AddTransient<ConversionViewModel>();
+
+            builder.Services.AddTransient<Views.Settings>();
+            builder.Services.AddTransient<SettingsViewModel>();
 
             Routing.RegisterRoute(nameof(CurrencyForm), typeof(CurrencyForm));
-            Routing.RegisterRoute(nameof(Settings), typeof(Settings));
+            Routing.RegisterRoute(nameof(Views.Settings), typeof(Views.Settings));
             Routing.RegisterRoute(nameof(CurrencyList), typeof(CurrencyList));
             Routing.RegisterRoute(nameof(Conversion), typeof(Conversion));
 

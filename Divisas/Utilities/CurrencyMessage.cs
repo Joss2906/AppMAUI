@@ -10,6 +10,7 @@ namespace Divisas.Utilities
     public class CurrencyMessage
     {
         public bool isNew { get; set; } //para saber si es  nuevo o edición
-        public CurrencyDTO Currency { get; set; }
+        public CurrencyDTO? Currency { get; set; }
+        public SettingsDTO? Settings { get; set; }
     }
 }

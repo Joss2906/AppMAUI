@@ -13,9 +13,21 @@ namespace Divisas.DataAccess
     {
         //aqui se setean las tablas de la bd
         public DbSet<Currency> Currencies { get; set; }
+        public DbSet<Settings> Settings { get; set; }
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            string dbPath = DBConnection.ReturnRoute("currencies.db");
+            if (!File.Exists(dbPath))
+            {
+                Console.WriteLine("La base de datos no existe en la ruta: " + dbPath);
+            }
+            else
+            {
+                Console.WriteLine("La base de datos se encuentra en: " + dbPath);
+            }
+
             string dbConnection = $"Filename={DBConnection.ReturnRoute("currencies.db")}";
             optionsBuilder.UseSqlite(dbConnection);
         }
@@ -28,6 +40,8 @@ namespace Divisas.DataAccess
                 entity.HasKey(col => col.Id);
                 entity.Property(col => col.Id).IsRequired().ValueGeneratedOnAdd(); //autoincremental
             });
+
+            
         }
     }
 }

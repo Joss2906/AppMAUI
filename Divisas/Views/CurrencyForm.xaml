@@ -21,11 +21,13 @@
         <Label Text="Nombre"/>
         <Entry Text="{Binding CurrencyDto.Name}" Margin="0,0,0,10"/>
 
-        <Label Text="Tipo de Cambio"/>
+        <Label Text="Codigo"/>
+        <Entry Text="{Binding CurrencyDto.Image}" Margin="0,0,0,10"/>
+
+        <Label Text="Tipo de Cambio en USD"/>
         <Entry Text="{Binding CurrencyDto.ExchangeRate}" Keyboard="Numeric" Margin="0,0,0,10"/>
 
-        <Label Text="Imagen"/>
-        <Entry Text="{Binding CurrencyDto.Image}" Margin="0,0,0,10"/>
+        
 
         <Button Text="Guardar" Command="{Binding SaveCommand}" BackgroundColor="Green"/>
 

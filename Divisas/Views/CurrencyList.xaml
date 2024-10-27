@@ -33,15 +33,17 @@
                                 <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="End"
                                     Text="{Binding Name}" />
 
+                                <Label Grid.Row="2" Grid.Column="0"
+                                    Text="Codigo:" FontAttributes="Bold"/>
+                                <Label Grid.Row="2" Grid.Column="1" HorizontalOptions="End"
+                                    Text="{Binding Image}" />
+
                                 <Label Grid.Row="1" Grid.Column="0"
                                     Text="Tipo de Cambio:" FontAttributes="Bold"/>
                                 <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="End"
                                     Text="{Binding ExchangeRate}" />
 
-                                <Label Grid.Row="2" Grid.Column="0"
-                                    Text="Imagen:" FontAttributes="Bold"/>
-                                <Label Grid.Row="2" Grid.Column="1" HorizontalOptions="End"
-                                    Text="{Binding Image}" />
+                                
 
                                 <Label Grid.Row="4" Grid.Column="0" Padding="0,15,10,5"
                                        Text="Editar" TextColor="Blue"

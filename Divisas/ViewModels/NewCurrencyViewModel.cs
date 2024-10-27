@@ -35,12 +35,6 @@ namespace Divisas.ViewModels
             _dbContext = context;
         }
 
-        //public NewCurrencyViewModel()
-        //{
-        //    _dbContext = new CurrencyDbContext();
-        //}
-
-
         public async void ApplyQueryAttributes(IDictionary<string, object> query)
         {
             var id = int.Parse(query["id"].ToString());
@@ -66,8 +60,6 @@ namespace Divisas.ViewModels
                 });
             }
 
-
-            //throw new NotImplementedException();
         }
 
         [RelayCommand]
@@ -119,7 +111,6 @@ namespace Divisas.ViewModels
                 {
                     LoadingIsVisible = false;
                     WeakReferenceMessenger.Default.Send(new CurrencyDeliveryMsg(message));
-                    //await Shell.Current.GoToAsync("//CurrencyList");
                     await Shell.Current.Navigation.PopAsync();
                 });
 
