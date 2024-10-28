@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Divisas.Models;
 using Divisas.Utilities;
 using Microsoft.EntityFrameworkCore;
+using System.IO;
 
 namespace Divisas.DataAccess
 {
@@ -26,6 +27,9 @@ namespace Divisas.DataAccess
             else
             {
                 Console.WriteLine("La base de datos se encuentra en: " + dbPath);
+
+                // esta linea sirve para eliminar la BD
+                //File.Delete(dbPath); 
             }
 
             string dbConnection = $"Filename={DBConnection.ReturnRoute("currencies.db")}";

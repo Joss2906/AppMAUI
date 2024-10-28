@@ -18,26 +18,81 @@ namespace Divisas.ViewModels
     public partial class ConversionViewModel : ObservableObject, IQueryAttributable
     {
         private readonly CurrencyDbContext? _dbContext;
+        private double finalExchangeRate = 0;
 
         [ObservableProperty]
-        private List<string> currencyList = new List<string>();
+        private List<CurrencyDTO> currencyList = new List<CurrencyDTO>();
+
+        [ObservableProperty]
+        private CurrencyDTO? fromCurrency;
+
+        [ObservableProperty]
+        private CurrencyDTO? toCurrency;
+
+        [ObservableProperty]
+        private double amount;
+
+        [ObservableProperty]
+        private double convertedAmount;
+
+        [ObservableProperty]
+        private string exchangeRateLabel;
         public ConversionViewModel(CurrencyDbContext context)
         {
             _dbContext = context;
 
             MainThread.BeginInvokeOnMainThread(new Action(async () => await Get()));
+
+            WeakReferenceMessenger.Default.Register<CurrencyListUpdatedMessage>(this, (r, m) =>
+            {
+                CurrencyList = m.Value.ToList();
+            });
         }
 
         public async Task Get()
         {
             var list = await _dbContext.Currencies.ToListAsync();
-            if (list.Any())
+            
+            CurrencyList = list.Select(item => new CurrencyDTO
             {
-                foreach (var item in list)
-                {
-                    CurrencyList.Add(item.Image);
-                }
+                Id = item.Id,
+                Name = item.Name,
+                ExchangeRate = item.ExchangeRate,
+                Image = item.Image
+            }).ToList();
+        }
+
+        [RelayCommand]
+        private void Convert()
+        {
+            if (FromCurrency != null && ToCurrency != null && Amount > 0)
+            {
+                finalExchangeRate = FromCurrency.ExchangeRate / ToCurrency.ExchangeRate;
+                var temp = Amount * (finalExchangeRate);
+                ConvertedAmount = Math.Round(temp, 4);
+
+                ExchangeRateLabel = $"1 {FromCurrency.Image} = {Math.Round(finalExchangeRate, 4)} {ToCurrency.Image}";
+
             }
+            else
+            {
+                ConvertedAmount = 0; // Resetea si falta algún valor
+            }
+        }
+
+        partial void OnAmountChanged(double value)
+        {
+            Convert();
+        }
+
+        partial void OnToCurrencyChanged(CurrencyDTO? value)
+        {
+            Convert();
+        }
+
+        partial void OnFromCurrencyChanged(CurrencyDTO? value)
+        {
+            Convert();
         }
 
         public void ApplyQueryAttributes(IDictionary<string, object> query)

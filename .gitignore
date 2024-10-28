@@ -2,7 +2,7 @@
 
 # Ignore build outputs
 bin/
-obj/
+*/obj/Debug
 
 # Ignore user-specific files
 *.user

@@ -52,7 +52,7 @@ namespace Divisas.ViewModels
                 }
 
                 MainThread.BeginInvokeOnMainThread(() => Loading = false);
-            }); 
+            });
         }
 
         public async Task GetData()
@@ -72,35 +72,47 @@ namespace Divisas.ViewModels
         public void SaveSettings()
         {
             Loading = true;
-            CurrencyMessage message = new CurrencyMessage();
-            bool newSetting = SettingsDto.Id == 0;
 
             Task.Run(async () =>
             {
-                var settings = new Settings
+                var existingSettings = await _dbContext.Settings.FirstOrDefaultAsync();
+
+                if (existingSettings != null)
                 {
-                    BaseCurrency = SettingsDto.BaseCurrency,
-                    Name = SettingsDto.Name,
-                    Address = SettingsDto.Address,
-                    Phone = SettingsDto.Phone
-                };
-                _dbContext.Settings.Add(settings);
+                    existingSettings.BaseCurrency = SettingsDto.BaseCurrency;
+                    existingSettings.Name = SettingsDto.Name;
+                    existingSettings.Address = SettingsDto.Address;
+                    existingSettings.Phone = SettingsDto.Phone;
+
+                    _dbContext.Settings.Update(existingSettings);
+                }
+                else
+                {
+                    var newSettings = new Settings
+                    {
+                        BaseCurrency = SettingsDto.BaseCurrency,
+                        Name = SettingsDto.Name,
+                        Address = SettingsDto.Address,
+                        Phone = SettingsDto.Phone
+                    };
+                    _dbContext.Settings.Add(newSettings);
+                    SettingsDto.Id = newSettings.Id; // Actualizar el Id del DTO
+                }
 
                 try
                 {
                     await _dbContext.SaveChangesAsync();
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
-
-                SettingsDto.Id = settings.Id;
 
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
                     Loading = false;
                 });
             });
-        }   
+        }
     }
 }

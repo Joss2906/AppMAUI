@@ -30,17 +30,6 @@ namespace Divisas.ViewModels
             });
         }
 
-        //public CurrencyListViewModel()
-        //{
-        //    _dbContext = new CurrencyDbContext();
-        //    MainThread.BeginInvokeOnMainThread(new Action(async () => await Get()));
-
-        //    WeakReferenceMessenger.Default.Register<CurrencyDeliveryMsg>(this, (r, m) =>
-        //    {
-        //        MessageReceived(m.Value);
-        //    });
-        //}
-
         public async Task Get()
         {
             var list = await _dbContext.Currencies.ToListAsync();
@@ -77,6 +66,7 @@ namespace Divisas.ViewModels
                 foundItem.Image = currencyDto.Image;
             }
 
+            WeakReferenceMessenger.Default.Send(new CurrencyListUpdatedMessage(CurrencyList));
         }
 
         [RelayCommand]
@@ -107,6 +97,7 @@ namespace Divisas.ViewModels
                 await _dbContext.SaveChangesAsync();
                 CurrencyList.Remove(currencyDto);
 
+                WeakReferenceMessenger.Default.Send(new CurrencyListUpdatedMessage(CurrencyList));
             }
 
         }

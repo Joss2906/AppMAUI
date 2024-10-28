@@ -59727,24 +59727,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dell\\.nuget\\packages\\": {},
+    "C:\\Users\\Evidence\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dell\\Documents\\10mo cuatri\\AppMAUI\\Divisas\\Divisas.csproj",
+      "projectUniqueName": "C:\\Users\\Evidence\\Documents\\Jocelyn Moreno\\ProyectoMAUI\\Divisas\\Divisas.csproj",
       "projectName": "Divisas",
-      "projectPath": "C:\\Users\\Dell\\Documents\\10mo cuatri\\AppMAUI\\Divisas\\Divisas.csproj",
-      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dell\\Documents\\10mo cuatri\\AppMAUI\\Divisas\\obj\\",
+      "projectPath": "C:\\Users\\Evidence\\Documents\\Jocelyn Moreno\\ProyectoMAUI\\Divisas\\Divisas.csproj",
+      "packagesPath": "C:\\Users\\Evidence\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Evidence\\Documents\\Jocelyn Moreno\\ProyectoMAUI\\Divisas\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Evidence\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
