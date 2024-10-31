@@ -9,7 +9,7 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Divisas
-build_property.ProjectDir = C:\Users\Evidence\Documents\Jocelyn Moreno\ProyectoMAUI\Divisas\
+build_property.ProjectDir = C:\Users\cesar\Desktop\Proyecto\maui\AppMAUI\Divisas\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTAotOptimizerEnabled = true
@@ -20,67 +20,67 @@ build_property.CsWinRTCcwLookupTableGeneratorEnabled = true
 build_property.CsWinRTMergeReferencedActivationFactories = 
 build_property.CsWinRTAotWarningLevel = 
 
-[C:/Users/Evidence/Documents/Jocelyn Moreno/ProyectoMAUI/Divisas/App.xaml]
+[C:/Users/cesar/Desktop/Proyecto/maui/AppMAUI/Divisas/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Divisas.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/Evidence/Documents/Jocelyn Moreno/ProyectoMAUI/Divisas/AppShell.xaml]
+[C:/Users/cesar/Desktop/Proyecto/maui/AppMAUI/Divisas/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Divisas.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/Evidence/Documents/Jocelyn Moreno/ProyectoMAUI/Divisas/MainPage.xaml]
+[C:/Users/cesar/Desktop/Proyecto/maui/AppMAUI/Divisas/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Divisas.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/Users/Evidence/Documents/Jocelyn Moreno/ProyectoMAUI/Divisas/Resources/Styles/Colors.xaml]
+[C:/Users/cesar/Desktop/Proyecto/maui/AppMAUI/Divisas/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Divisas.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/Evidence/Documents/Jocelyn Moreno/ProyectoMAUI/Divisas/Resources/Styles/Styles.xaml]
+[C:/Users/cesar/Desktop/Proyecto/maui/AppMAUI/Divisas/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Divisas.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/Evidence/Documents/Jocelyn Moreno/ProyectoMAUI/Divisas/Views/Conversion.xaml]
+[C:/Users/cesar/Desktop/Proyecto/maui/AppMAUI/Divisas/Views/Conversion.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Divisas.Views.Conversion.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Conversion.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Conversion.xaml
 
-[C:/Users/Evidence/Documents/Jocelyn Moreno/ProyectoMAUI/Divisas/Views/CurrencyForm.xaml]
+[C:/Users/cesar/Desktop/Proyecto/maui/AppMAUI/Divisas/Views/CurrencyForm.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Divisas.Views.CurrencyForm.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\CurrencyForm.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\CurrencyForm.xaml
 
-[C:/Users/Evidence/Documents/Jocelyn Moreno/ProyectoMAUI/Divisas/Views/CurrencyList.xaml]
+[C:/Users/cesar/Desktop/Proyecto/maui/AppMAUI/Divisas/Views/CurrencyList.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Divisas.Views.CurrencyList.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\CurrencyList.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\CurrencyList.xaml
 
-[C:/Users/Evidence/Documents/Jocelyn Moreno/ProyectoMAUI/Divisas/Views/PageSelector.xaml]
+[C:/Users/cesar/Desktop/Proyecto/maui/AppMAUI/Divisas/Views/PageSelector.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Divisas.Views.PageSelector.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\PageSelector.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\PageSelector.xaml
 
-[C:/Users/Evidence/Documents/Jocelyn Moreno/ProyectoMAUI/Divisas/Views/Settings.xaml]
+[C:/Users/cesar/Desktop/Proyecto/maui/AppMAUI/Divisas/Views/Settings.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Divisas.Views.Settings.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Settings.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Settings.xaml
 
-[C:/Users/Evidence/Documents/Jocelyn Moreno/ProyectoMAUI/Divisas/Views/Splash.xaml]
+[C:/Users/cesar/Desktop/Proyecto/maui/AppMAUI/Divisas/Views/Splash.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Divisas.Views.Splash.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Splash.xaml

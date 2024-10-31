@@ -2,66 +2,82 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Divisas.Views.Conversion"
-             Title="Convertidor de Divisas">
-    <ScrollView>
-        <StackLayout 
-            Padding="20"
-            Spacing="20"
-            VerticalOptions="CenterAndExpand">
-            
+             Title="Convertidor de Divisas"
+             BackgroundColor="#0066CC">
+    <ContentPage.Resources>
+        <LinearGradientBrush x:Key="BackgroundGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#0066CC" Offset="0.0" />
+            <GradientStop Color="#4A0066" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Resources>
 
-            <!-- Sección de conversión -->
-            <Frame Padding="10" CornerRadius="15" HasShadow="True">
-                <VerticalStackLayout Spacing="15">
-                    <!-- Monto a convertir -->
-                    <Grid ColumnDefinitions="Auto, *, Auto">
-                        <!-- Bandera y Picker de la moneda -->
-                        <Image Source="convertir.png" WidthRequest="30" HeightRequest="20" VerticalOptions="Center" />
-                        <Picker Title="From"
-                                VerticalOptions="Center"
-                                ItemsSource="{Binding CurrencyList}"
-                                ItemDisplayBinding="{Binding Image}"
-                                SelectedItem="{Binding FromCurrency}"
-                                Grid.Column="1" />
-                        <Entry Text="{Binding Amount, Mode=TwoWay}" 
-                               Keyboard="Numeric" 
-                               FontSize="Medium" 
-                               HorizontalOptions="End" 
-                               Grid.Column="2" />
-                    </Grid>
+    <Grid Background="{StaticResource BackgroundGradient}">
+        <ScrollView>
+            <Frame Margin="20" Padding="20" BackgroundColor="#80000000" CornerRadius="20">
+                <StackLayout Spacing="20" VerticalOptions="CenterAndExpand">
+                    <!-- Sección de conversión -->
+                    <Frame Padding="20" BackgroundColor="#1AFFFFFF" CornerRadius="20">
+                        <VerticalStackLayout Spacing="15">
+                            <!-- Monto a convertir -->
+                            <Grid ColumnDefinitions="Auto, *, Auto">
+                                <Image Source="convertir.png" WidthRequest="30" HeightRequest="20" VerticalOptions="Center" />
+                                <Picker Title="From"
+                                        VerticalOptions="Center"
+                                        ItemsSource="{Binding CurrencyList}"
+                                        ItemDisplayBinding="{Binding Image}"
+                                        SelectedItem="{Binding FromCurrency}"
+                                        Grid.Column="1"
+                                        BackgroundColor="Transparent"
+                                        TextColor="White" />
+                                <Entry Text="{Binding Amount, Mode=TwoWay}" 
+                                       Keyboard="Numeric" 
+                                       FontSize="Medium" 
+                                       HorizontalOptions="End" 
+                                       Grid.Column="2"
+                                       BackgroundColor="Transparent"
+                                       TextColor="White" />
+                            </Grid>
 
-                    <!-- Icono de intercambio -->
-                    <Image Source="two_arrows.png" 
-                           HeightRequest="30"
-                           WidthRequest="30"
-                           HorizontalOptions="Center" />
+                            <!-- Icono de intercambio -->
+                            <Image Source="two_arrows.png" 
+                                   HeightRequest="30"
+                                   WidthRequest="30"
+                                   HorizontalOptions="Center" />
 
-                    <!-- Monto convertido -->
-                    <Grid ColumnDefinitions="Auto, *, Auto">
-                        <!-- Bandera y Picker de la moneda convertida -->
-                        <Image Source="convertir.png" WidthRequest="30" HeightRequest="20" VerticalOptions="Center" />
-                        <Picker Title="To"
-                                VerticalOptions="Center"
-                                ItemsSource="{Binding CurrencyList}"
-                                ItemDisplayBinding="{Binding Image}"
-                                SelectedItem="{Binding ToCurrency}"
-                                Grid.Column="1" />
-                        <Entry Text="{Binding ConvertedAmount}" 
-                               IsReadOnly="True" 
-                               FontSize="Medium" 
-                               HorizontalOptions="End" 
-                               Grid.Column="2" />
-                    </Grid>
-                </VerticalStackLayout>
+                            <!-- Monto convertido -->
+                            <Grid ColumnDefinitions="Auto, *, Auto">
+                                <Image Source="convertir.png" WidthRequest="30" HeightRequest="20" VerticalOptions="Center" />
+                                <Picker Title="To"
+                                        VerticalOptions="Center"
+                                        ItemsSource="{Binding CurrencyList}"
+                                        ItemDisplayBinding="{Binding Image}"
+                                        SelectedItem="{Binding ToCurrency}"
+                                        Grid.Column="1"
+                                        BackgroundColor="Transparent"
+                                        TextColor="White" />
+                                <Entry Text="{Binding ConvertedAmount}" 
+                                       IsReadOnly="True" 
+                                       FontSize="Medium" 
+                                       HorizontalOptions="End" 
+                                       Grid.Column="2"
+                                       BackgroundColor="Transparent"
+                                       TextColor="White" />
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- Tasa de cambio -->
+                    <Label Text="Indicative Exchange Rate" 
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="White"
+                           FontSize="Large" />
+                    <Label Text="{Binding ExchangeRateLabel}"
+                           FontSize="Medium" 
+                           HorizontalOptions="Center"
+                           TextColor="White" />
+                </StackLayout>
             </Frame>
-
-            <!-- Tasa de cambio -->
-            <Label Text="Indicative Exchange Rate" 
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center" />
-            <Label Text="{Binding ExchangeRateLabel}"
-                   FontSize="Medium" 
-                   HorizontalOptions="Center" />
-        </StackLayout>
-    </ScrollView>
+        </ScrollView>
+    </Grid>
 </ContentPage>

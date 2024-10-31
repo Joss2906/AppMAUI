@@ -3,26 +3,48 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Divisas.Views.Splash"
              NavigationPage.HasNavigationBar="False"
-             Title="">
-    
+             Title=""
+             BackgroundColor="Transparent"
+             >
+    <!-- Fondo con gradiente -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#0066CC" Offset="0.0" />
+            <GradientStop Color="#4A0066" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
     <StackLayout 
         VerticalOptions="CenterAndExpand" 
-        Margin="15"
-        Padding="15"
+        HorizontalOptions="CenterAndExpand"
+        Padding="20"
         >
-        <Label
-            Text="CURRENCY CONVERTER"
-            FontSize="Title"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            FontAttributes="Bold"
-            TextColor="Purple"
-            />
+        <!-- Título con estilo -->
+        <Frame BackgroundColor="Transparent" Padding="0" HasShadow="False">
+            <Label
+                Text="CURRENCY CONVERTER"
+                FontSize="25"
+                FontFamily="Poppins"
+                FontAttributes="Bold"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                TextColor="White"
+                />
+        </Frame>
+
+        <!-- Imagen -->
         <Image Source="splash_image.png" 
                HorizontalOptions="Center"
                VerticalOptions="Center"/>
-        <Button Text="Get Started" Padding="15"
-                BackgroundColor="Purple"
+
+        <!-- Botón con estilo -->
+        <Button Text="Get Started"
+                Padding="15,10"
+                TextColor="White"
+                BackgroundColor="#4A0066"
+                FontSize="16"
+                CornerRadius="30"
+                FontAttributes="Bold"
                 Clicked="OnGetStartedClicked"/>
     </StackLayout>
 </ContentPage>

@@ -4,36 +4,77 @@
              x:Class="Divisas.Views.Settings"
              Title="Configuración">
 
-    <ScrollView>
-        <StackLayout
-            VerticalOptions="CenterAndExpand"
-            Margin="15"
-            Padding="15">
+    <ContentPage.Resources>
+        <LinearGradientBrush x:Key="BackgroundGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#0066CC" Offset="0.0" />
+            <GradientStop Color="#4A0066" Offset="1.0" />
+        </LinearGradientBrush>
 
-            <Image Source="avatar_femenino.png" 
-               HorizontalOptions="Center"/>
+        <Style x:Key="InputLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="0,5,0,2"/>
+        </Style>
 
-            <ActivityIndicator 
-                IsVisible="{Binding Loading}"
-                IsRunning="{Binding Loading}"
-                Color="Blue"
-                HeightRequest="30"/>
+        <Style x:Key="InputEntryStyle" TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="PlaceholderColor" Value="#80FFFFFF"/>
+            <Setter Property="Margin" Value="0,0,0,15"/>
+            <Setter Property="HeightRequest" Value="40"/>
+        </Style>
 
-            <Label Text="Nombre"/>
-            <Entry Text="{Binding SettingsDto.Name}" Margin="0,0,0,10"/>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="Margin" Value="0,10"/>
+            <Setter Property="Background" Value="{StaticResource BackgroundGradient}"/>
+        </Style>
+    </ContentPage.Resources>
 
-            <Label Text="Moneda Base"/>
-            <Entry Text="{Binding SettingsDto.BaseCurrency}" Margin="0,0,0,10"/>
+    <Grid Background="{StaticResource BackgroundGradient}">
+        <ScrollView>
+            <Frame Margin="20" 
+                   Padding="20" 
+                   BackgroundColor="#26FFFFFF" 
+                   CornerRadius="20"
+                   BorderColor="Transparent">
 
-            <Label Text="Direccion"/>
-            <Entry Text="{Binding SettingsDto.Address}" Margin="0,0,0,10"/>
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Image Source="avatar_femenino.png" 
+                           HorizontalOptions="Center"
+                           HeightRequest="120"
+                           Margin="0,0,0,20"/>
 
-            <Label Text="Teléfono"/>
-            <Entry Text="{Binding SettingsDto.Phone}" Margin="0,0,0,10"/>
+                    <ActivityIndicator 
+                        IsVisible="{Binding Loading}"
+                        IsRunning="{Binding Loading}"
+                        Color="White"
+                        HeightRequest="30"/>
 
-            <Button Text="Guardar" Command="{Binding SaveSettingsCommand}" BackgroundColor="Blue"/>
-        </StackLayout>
-    </ScrollView>
-    
+                    <Label Text="Nombre" Style="{StaticResource InputLabelStyle}"/>
+                    <Entry Text="{Binding SettingsDto.Name}" 
+                           Style="{StaticResource InputEntryStyle}"/>
 
+                    <Label Text="Moneda Base" Style="{StaticResource InputLabelStyle}"/>
+                    <Entry Text="{Binding SettingsDto.BaseCurrency}" 
+                           Style="{StaticResource InputEntryStyle}"/>
+
+                    <Label Text="Dirección" Style="{StaticResource InputLabelStyle}"/>
+                    <Entry Text="{Binding SettingsDto.Address}" 
+                           Style="{StaticResource InputEntryStyle}"/>
+
+                    <Label Text="Teléfono" Style="{StaticResource InputLabelStyle}"/>
+                    <Entry Text="{Binding SettingsDto.Phone}" 
+                           Style="{StaticResource InputEntryStyle}"/>
+
+                    <Button Text="Guardar" 
+                            Command="{Binding SaveSettingsCommand}" 
+                            Style="{StaticResource ButtonStyle}"/>
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+    </Grid>
 </ContentPage>

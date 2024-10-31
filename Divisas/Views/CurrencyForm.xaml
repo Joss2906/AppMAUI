@@ -1,36 +1,42 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Divisas.Views.CurrencyForm"
              Title="{Binding PageTitle}">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#0066CC" Offset="0.0" />
+            <!-- Azul -->
+            <GradientStop Color="#4A0066" Offset="1.0" />
+            <!-- Púrpura oscuro -->
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
     <StackLayout 
         VerticalOptions="CenterAndExpand"
         Margin="15"
         Padding="15">
-        
-        <!--<Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />-->
+
         <ActivityIndicator 
             IsVisible="{Binding LoadingIsVisible}"
             IsRunning="{Binding LoadingIsVisible}"
             Color="Blue"
             HeightRequest="30"/>
 
-        <Label Text="Nombre"/>
-        <Entry Text="{Binding CurrencyDto.Name}" Margin="0,0,0,10"/>
+        <Label Text="Nombre" TextColor="White"/>
+        <!-- Cambiar color a blanco -->
+        <Entry Text="{Binding CurrencyDto.Name}" Margin="0,0,0,10" TextColor="White" />
+        <!-- Fondo oscuro y texto blanco -->
 
-        <Label Text="Codigo"/>
-        <Entry Text="{Binding CurrencyDto.Image}" Margin="0,0,0,10"/>
+        <Label Text="Codigo" TextColor="White"/>
+        <!-- Cambiar color a blanco -->
+        <Entry Text="{Binding CurrencyDto.Image}" Margin="0,0,0,10" TextColor="White" />
+        <!-- Fondo oscuro y texto blanco -->
 
-        <Label Text="Tipo de Cambio en USD"/>
-        <Entry Text="{Binding CurrencyDto.ExchangeRate}" Keyboard="Numeric" Margin="0,0,0,10"/>
+        <Label Text="Tipo de Cambio en USD" TextColor="White"/>
+        <!-- Cambiar color a blanco -->
+        <Entry Text="{Binding CurrencyDto.ExchangeRate}" Keyboard="Numeric" Margin="0,0,0,10" TextColor="White" />
+        <!-- Fondo oscuro y texto blanco -->
 
-        
-
-        <Button Text="Guardar" Command="{Binding SaveCommand}" BackgroundColor="Green"/>
-
-
+        <Button Text="Guardar" Command="{Binding SaveCommand}" BackgroundColor="#5B00B6" TextColor="White"/>
     </StackLayout>
 </ContentPage>

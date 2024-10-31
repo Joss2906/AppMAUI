@@ -5,85 +5,89 @@
              x:Class="Divisas.Views.CurrencyList"
              Title="Divisas Disponibles">
 
-    <Grid RowDefinitions="Auto,Auto,*" RowSpacing="15" Margin="15">
+    <ContentPage.Resources>
+        <LinearGradientBrush x:Key="BackgroundGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#0066CC" Offset="0.0" />
+            <GradientStop Color="#4A0066" Offset="1.0" />
+        </LinearGradientBrush>
 
-        <Button Grid.Row="0" Text="Nueva Divisa" Command="{Binding CreateCommand}"/>
-        <!--<Label Grid.Row="1" Text="Lista de Divisas" FontSize="Subtitle"/>-->
+        <!-- Degradado para los botones -->
+        <LinearGradientBrush x:Key="ButtonGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#5B00B6" Offset="0.0" />
+            <GradientStop Color="#7E1091" Offset="1.0" />
+        </LinearGradientBrush>
 
-        <ScrollView Grid.Row="2">
+        <!-- Estilo común para los botones -->
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource ButtonGradient}" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="Padding" Value="15,10" />
+        </Style>
+    </ContentPage.Resources>
 
-            <CollectionView ItemsSource="{Binding CurrencyList}">
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout ItemSpacing="5" Orientation="Vertical"/>
-                </CollectionView.ItemsLayout>
+    <Grid Background="{StaticResource BackgroundGradient}">
+        <ScrollView>
+            <Frame Margin="20" Padding="20" BackgroundColor="#80000000" CornerRadius="20">
+                <StackLayout Spacing="20">
+                    <!-- Botón "Nueva Divisa" -->
+                    <Button Text="Nueva Divisa" 
+                            Command="{Binding CreateCommand}"
+                            Style="{StaticResource ButtonStyle}"
+                            HeightRequest="50"/>
 
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:CurrencyDTO">
-                        <Border Padding="10,5" HorizontalOptions="FillAndExpand">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="5"/>
-                            </Border.StrokeShape>
+                    <!-- Lista de Divisas -->
+                    <CollectionView ItemsSource="{Binding CurrencyList}">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
+                        </CollectionView.ItemsLayout>
 
-                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
-                                  ColumnDefinitions="Auto,*"
-                                  >
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="model:CurrencyDTO">
+                                <Frame BackgroundColor="#1AFFFFFF" 
+                                       CornerRadius="10" 
+                                       Padding="15" 
+                                       Margin="0,5">
+                                    <Grid RowDefinitions="Auto,Auto,Auto,Auto"
+                                          ColumnDefinitions="*,*">
 
-                                <Label Grid.Row="0" Grid.Column="0"
-                                       Text="Nombre Completo:" FontAttributes="Bold"/>
-                                <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="End"
-                                    Text="{Binding Name}" />
+                                        <Label Grid.Row="0" Grid.Column="0" Text="Nombre Completo:" 
+                                               FontAttributes="Bold" TextColor="White"/>
+                                        <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="End"
+                                               Text="{Binding Name}" TextColor="White"/>
 
-                                <Label Grid.Row="2" Grid.Column="0"
-                                    Text="Codigo:" FontAttributes="Bold"/>
-                                <Label Grid.Row="2" Grid.Column="1" HorizontalOptions="End"
-                                    Text="{Binding Image}" />
+                                        <Label Grid.Row="1" Grid.Column="0" Text="Tipo de Cambio:" 
+                                               FontAttributes="Bold" TextColor="White"/>
+                                        <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="End"
+                                               Text="{Binding ExchangeRate}" TextColor="White"/>
 
-                                <Label Grid.Row="1" Grid.Column="0"
-                                    Text="Tipo de Cambio:" FontAttributes="Bold"/>
-                                <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="End"
-                                    Text="{Binding ExchangeRate}" />
+                                        <Label Grid.Row="2" Grid.Column="0" Text="Codigo:" 
+                                               FontAttributes="Bold" TextColor="White"/>
+                                        <Label Grid.Row="2" Grid.Column="1" HorizontalOptions="End"
+                                               Text="{Binding Image}" TextColor="White"/>
 
-                                
-
-                                <Label Grid.Row="4" Grid.Column="0" Padding="0,15,10,5"
-                                       Text="Editar" TextColor="Blue"
-                                       >
-                                    <Label.GestureRecognizers>
-                                        <TapGestureRecognizer 
-                                            Command="{Binding BindingContext.UpdateCommand, Source={x:RelativeSource AncestorType={x:Type ContentPage}}}"
-                                            CommandParameter="{Binding}"
-                                            />
-                                    </Label.GestureRecognizers>
-
-                                </Label>
-                                <Label Grid.Row="4" Grid.Column="1" Padding="10,15,0,5"
-                                       Text="Eliminar" TextColor="Red" HorizontalOptions="End"
-                                       >
-                                    <Label.GestureRecognizers>
-                                        <TapGestureRecognizer 
-                                        Command="{Binding BindingContext.DeleteCommand, Source={x:RelativeSource AncestorType={x:Type ContentPage}}}"
-                                        CommandParameter="{Binding}"
-                                        />
-                                    </Label.GestureRecognizers>
-
-                                </Label>
-
-                            </Grid>
-
-
-
-                        </Border>
-                    </DataTemplate>
-
-                </CollectionView.ItemTemplate>
-
-
-
-            </CollectionView>
-
-
+                                        <StackLayout Grid.Row="3" Grid.ColumnSpan="2" 
+                                                     Orientation="Horizontal" 
+                                                     HorizontalOptions="CenterAndExpand" 
+                                                     Spacing="20" 
+                                                     Margin="0,15,0,0">
+                                            <Button Text="Editar" 
+                                                    Style="{StaticResource ButtonStyle}"
+                                                    Command="{Binding BindingContext.UpdateCommand, Source={x:RelativeSource AncestorType={x:Type ContentPage}}}"
+                                                    CommandParameter="{Binding}" />
+                                            <Button Text="Eliminar" 
+                                                    Style="{StaticResource ButtonStyle}"
+                                                    Command="{Binding BindingContext.DeleteCommand, Source={x:RelativeSource AncestorType={x:Type ContentPage}}}"
+                                                    CommandParameter="{Binding}" />
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </Frame>
         </ScrollView>
-
     </Grid>
-
 </ContentPage>
